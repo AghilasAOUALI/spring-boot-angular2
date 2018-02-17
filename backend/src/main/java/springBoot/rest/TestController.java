@@ -1,10 +1,10 @@
-package io.abnd.rest;
+package springBoot.rest;
 
-import io.abnd.model.Message;
 import org.springframework.web.bind.annotation.*;
+import springBoot.service.intf.TestService;
+import src.service.Population;
 
-import io.abnd.service.intf.TestService;
-
+import javax.xml.ws.Endpoint;
 import java.util.List;
 
 @RestController
@@ -18,7 +18,7 @@ public class TestController {
 
 	@CrossOrigin(origins = "http://localhost:3000")
 	@RequestMapping(value="/test/get/json", method=RequestMethod.GET, produces="application/json")
-	public @ResponseBody List<Message> testGetJson() {
+	public @ResponseBody List<String> testGetJson() {
 	    return this.testService.test();
 	}
 }

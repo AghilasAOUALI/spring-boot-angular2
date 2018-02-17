@@ -47,18 +47,24 @@ configurations {
 }
 
 dependencies {
-	// spring
-	compile('org.springframework.boot:spring-boot-starter-web:1.5.2.RELEASE')
-	// google gson
-	compile('com.google.code.gson:gson:2.8.0')
+	compile('org.springframework.boot:spring-boot-actuator')
+	compile("org.springframework.boot:spring-boot-starter-web") {
+		//exclude module: 'spring-boot-starter-tomcat'
+	}
+	//compile "org.springframework.boot:spring-boot-starter-undertow"
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	// DriverDataSource
+	compile('mysql:mysql-connector-java')
 
-	// spring dev tools
-	dev('org.springframework.boot:spring-boot-devtools:1.5.2.RELEASE')
+	compile("com.zaxxer:HikariCP") {
+		exclude(module: 'tools')
+	}
 
-	// testing
-	testCompile('org.springframework.boot:spring-boot-starter-test:1.5.2.RELEASE')
+	//flyway
+	compile('org.flywaydb:flyway-core:4.0.3')
 }
-
 // run spring boot app
 bootRun {
 	//addResources = true

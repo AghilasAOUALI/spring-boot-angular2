@@ -1,0 +1,9 @@
+
+  CREATE TABLE tuser
+(
+  id INT PRIMARY KEY NOT NULL,
+  nom VARCHAR(100) NOT NULL,
+  prenom VARCHAR(100) NOT NULL,
+  eamil VARCHAR(2) NOT NULL,
+  mdp VARCHAR(3) NOT NULL
+);
